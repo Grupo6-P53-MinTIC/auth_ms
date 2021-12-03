@@ -53,8 +53,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     #     super().save(**kwargs)
 
     objects = UserManager()
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELD = ['username']
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELD = ['email']
 
     
     def __str__ (self):
