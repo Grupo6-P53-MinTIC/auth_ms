@@ -7,12 +7,13 @@ from authApp.models.user import User
 from authApp.serializers import UserSerializer, UserDriverSerializer, AllUsersSerializer
 
 class UserCreateView(views.APIView):
+
     def post(self, request, *args, **kwargs):
         serializer = UserSerializer(data=request.data)
-
+        # -----------------------------------------------
         if request.data.get('typeAccount')=='D':
             serializer = UserDriverSerializer(data=request.data)
-        
+        # ------------------------------------------------
         serializer.is_valid(raise_exception=True) 
         serializer.save() 
 
@@ -32,7 +33,7 @@ class UserRetrieveUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
 
 class AllUsersView(generics.ListAPIView):
     queryset = User.objects.all()
-    serializer_class = AllUsersSerializer
+    serializer_class = UserSerializer
 
 class UserDetailView(generics.RetrieveAPIView):
     queryset = User.objects.all()

@@ -6,7 +6,5 @@ from authApp.models import User, Car
 from authApp.serializers import UserDriverSerializer, UserSerializer, CarSerializer
 
 class AllDriversView(generics.ListAPIView):
-    def get(self, request):
-        driver = User.objects.filter(typeAccount='D') 
-        serialized = UserSerializer(driver, many=True)
-        return Response(serialized.data, status=status.HTTP_200_OK)
+    queryset = User.objects.filter(typeAccount='D') 
+    serializer_class = UserSerializer
