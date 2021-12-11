@@ -6,6 +6,7 @@ from .userView import UserDetailView
 from .driverView import AllDriversView
 
 from .verifyTokenView import VerifyTokenView
+from .verifyTokenView import getUserByToken
 
 from .carView import CarListCreateView
 from .carView import CarRetrieveUpdateDeleteView

@@ -3,7 +3,6 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseU
 from django.contrib.auth.hashers import make_password
 from datetime import datetime
 
-
 class UserManager(BaseUserManager):
     def create_user(self, username, password=None):
         user = self.model(
