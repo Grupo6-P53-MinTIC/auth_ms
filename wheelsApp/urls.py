@@ -11,7 +11,7 @@ urlpatterns = [
     # path('admin/', admin.site.urls),
     path('userByToken/', views.getUserByToken.as_view()),
     path('user/', views.UserCreateView.as_view()),
-    path('user/<int:pk>', views.UserRetrieveUpdateDeleteView.as_view()),
+    # path('userDelUpt/<int:pk>', views.UserRetrieveUpdateDeleteView.as_view()),
     path('user/<int:pk>', views.UserDetailView.as_view()),
 
     # All users
